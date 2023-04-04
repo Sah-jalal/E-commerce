@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Navber = () => {
 
     const menuItem = <>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/'}>Home</Link>
+        <Link className='text-xl font-bold mx-8' to={'/'}>Home</Link>
+        <Link className='text-xl font-bold mx-8' to={'/'}>FlashSale</Link>
+        <Link className='text-xl font-bold mx-8' to={'/'}>Card</Link>
+        <Link className='text-xl font-bold mx-8' to={'/'}>Login</Link>
     </>
 
     return (
