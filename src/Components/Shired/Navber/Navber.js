@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthenContext } from '../../../Authentication/AuthContext';
 
 const Navber = () => {
+
+    const { user, signOutUser } = useContext(AuthenContext);
+
+    const handleSignOut = () => {
+        signOutUser()
+    }
 
     const menuItem = <>
         <Link className='text-xl font-bold mx-8' to={'/'}>Home</Link>
         <Link className='text-xl font-bold mx-8' to={'/'}>FlashSale</Link>
         <Link className='text-xl font-bold mx-8' to={'/'}>Card</Link>
-        <Link className='text-xl font-bold mx-8' to={'/'}>Login</Link>
+        {
+            user?.uid ? <> <button onClick={handleSignOut} className='text-xl font-bold mx-8'>SignOut</button> </> : <Link className='text-xl font-bold mx-8' to={'/login'}>Login</Link>
+        }
+
     </>
 
     return (
@@ -28,9 +38,9 @@ const Navber = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                    {
-                                menuItem
-                            }
+                        {
+                            menuItem
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
