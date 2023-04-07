@@ -11,9 +11,9 @@ const SignUp = () => {
     const [token] = useToken(createdUserEmail);
     const { createUser } = useContext(AuthenContext);
 
-    // if(token){
-    //     navigate('/')
-    // }
+    if(token){
+        navigate('/')
+    }
 
     const onSubmit = data => {
         const image = data.image[0];
